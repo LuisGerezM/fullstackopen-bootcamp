@@ -17,7 +17,7 @@ const App = () => {
 
   const [selected, setSelected] = useState(0);
 
-  // fill cambiar todos los valores del arreglo a valores estaticos. en este caso genera una arreglo con la longitud de anedcotes [0,0,0,0,0,0]
+  // fill cambia todos los valores del arreglo a valores estaticos. en este caso genera una arreglo con la longitud de anedcotes [0,0,0,0,0,0]
   const [points, setPoints] = useState(new Array(anecdotes.length).fill(0));
   const [existVote, setExistVote] = useState(false);
 
@@ -29,7 +29,7 @@ const App = () => {
     const point = [...points];
     // sumo 1 a la anecdota votada
     point[selected] += 1;
-    // guardo en array original "points" el nuevo array "point" pero modificado 
+    // guardo en array original "points" el nuevo array "point" pero modificado
     setPoints(point);
     setExistVote(true);
   };
@@ -37,9 +37,7 @@ const App = () => {
   const fetchAnecdoteMostVotes = () => {
     let higher = 0;
     let indexHigher = 0;
-    // console.log('points', points)
     points.forEach((element, index) => {
-      // console.log('element e index ', element, index)
       if (element > higher) {
         higher = element;
         indexHigher = index;

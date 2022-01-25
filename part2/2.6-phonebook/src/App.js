@@ -31,23 +31,8 @@ function App() {
     e.target.name === "number" && setNewNumPhone(e.target.value);
   };
 
-  // filtra por parte del nombre; necesitamos que filtre nombre completo
-  // function filterItems(query) {
-  //   return persons.filter(function (element) {
-  //     return element.name.toLowerCase().indexOf(query.toLowerCase()) > -1;
-  //   });
-  // }
-  // const filterItems = (query) => {
-  //   return persons.filter(function (element) {
-  //     return element.name.toLowerCase().indexOf(query.toLowerCase()) > -1;
-  //   });
-  // }
-
   const filterItems = (query) => {
-    // console.log("query", query);
     return persons.filter((element) => {
-      // console.log("element", element);
-      // element son los elementos del obj persons
       return (
         element.name.toLowerCase().indexOf(query.toLowerCase()) > -1 ||
         element.number.indexOf(query) > -1
@@ -62,26 +47,14 @@ function App() {
       (element) => element.name === newPerson.name
     );
 
-    // console.log("newPers", newPerson);
-
-    // filtra por parte del nombre; necesitamos que filtre nombre completo
-    //let checkPerson = filterItems(newPerson.name);
-
-    // element.name === newPerson -> [] ; se va a filtrar
     checkPerson.length !== 0
       ? alert(`${newName} is already added to phonebook`)
       : setPersons([...persons, newPerson]);
-    // setPersons([...persons, {name: newName}])
     setNewName("");
     setNewNumPhone("");
   };
 
   const handleSearchPerson = (e) => {
-    // console.log(e);
-    // console.log(e.target.value);
-    //setFilterPerson()
-    // console.log();
-
     if (e.target.value !== "") {
       setMessageLoading("searching ... type three characters or more");
       setNewSearch(true);
@@ -91,11 +64,9 @@ function App() {
         let checkFilter = filterItems(e.target.value);
 
         if (checkFilter.length !== 0) {
-          // console.log("filter check es V");
           setFilterResult(checkFilter);
           setLoading(false);
         } else {
-          // console.log("filter check es F");
           setLoading(true);
           setMessageErrorLoading(
             "searching still, it seems that this person does not exist. have you written good?"
@@ -104,10 +75,8 @@ function App() {
       } else {
         setFilterResult([]);
         setMessageErrorLoading("");
-        // console.log("no es 3 aun");
       }
     } else {
-      // console.log("es vacio");
       setMessageLoading("");
       setNewSearch(false);
     }
@@ -134,8 +103,6 @@ function App() {
         messageErrorLoading={messageErrorLoading}
         filterResult={filterResult}
       />
-      {/* component added temporarily for  debug */}
-      {/* <div>debug: {newName}</div> */}
     </div>
   );
 }

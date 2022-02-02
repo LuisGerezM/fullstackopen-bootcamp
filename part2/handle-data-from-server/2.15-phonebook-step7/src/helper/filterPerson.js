@@ -1,0 +1,1 @@
+export const filterEqualPeople = (newPerson, persons) => persons.filter((element) => element.name === newPerson.name)

@@ -26,7 +26,8 @@ const Persons = ({
         )
         .catch((error) =>
           handleMessageNotification(
-            `Information of ${name} with number ${number} has already been removed from server`, "danger"
+            `Information of ${name} with number ${number} has already been removed from server`,
+            "danger"
           )
         );
   };

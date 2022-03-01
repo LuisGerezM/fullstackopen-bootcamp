@@ -1,0 +1,9 @@
+Debido a que este no es un proyecto frontend y no estamos trabajando con React, la aplicación no se crea con create-react-app. Inicializa este proyecto con el comando " npm init " que se demostró anteriormente en esta parte del material.
+
+
+***
+express:
+npm install express
+
+nodemon:
+npm install --save-dev nodemon

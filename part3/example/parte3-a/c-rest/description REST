@@ -1,0 +1,19 @@
+Las notas en el caso de nuestra aplicación, se llaman recursos en el pensamiento REST. Cada recurso tiene una URL asociada que es la dirección única del recurso.
+
+Una convención es crear la dirección única para los recursos combinando el nombre del tipo de recurso con el identificador único del recurso.
+
+Supongamos que la URL raíz de nuestro servicio eswww.example.com/api.
+
+Si definimos el tipo de recurso de notas a ser note, entonces la dirección de un recurso de nota con el identificador 10, tiene la dirección única www.example.com/api/notes/10.
+
+La URL de la colección completa de todos los recursos de notas es www.example.com/api/notes.
+
+Podemos ejecutar diferentes operaciones sobre recursos. La operación a ejecutar está definida por el verbo HTTP:
+
+URL	       verbo	funcionalidad
+notes/10	GET	     obtiene un solo recurso
+notes	    GET      obtiene todos los recursos en una colección
+notes	    POST	 crea un nuevo recurso basado en los datos de la solicitud
+notes/10	DELETE	 elimina el recurso identificado
+notes/10	PUT	     reemplaza todo el recurso identificado con los datos de la solicitud
+notes/10	PATCH	 reemplaza una parte del recurso identificado con los datos de la solicitud
